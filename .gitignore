@@ -7,6 +7,6 @@ db.sqlite3
 /static
 .DS_Store
 
-#.gitignore→gitにアップされないものを指定
+#.gitignore→gitにアップされないものを指定!
 #sqliteをigonreする理由
 #→本番環境ではmysql(高性能)を入れるのと、ローカルのデータを消すと本番から消えるといったのを防ぐため
