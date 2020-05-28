@@ -26,7 +26,7 @@ SECRET_KEY = '*7l*4-r_9ze&uj(b*6t!sbvt#!=32pq!^ib^_!c5b#+jxe9cmi'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['0203cd6cc6cf4d1faeef3bb2b977dc27.vfs.cloud9.ap-northeast-1.amazonaws.com']
+ALLOWED_HOSTS = ['0203cd6cc6cf4d1faeef3bb2b977dc27.vfs.cloud9.ap-northeast-1.amazonaws.com', "http://uzukumaruu.pythonanywhere.com"]
 
 
 # Application definition
