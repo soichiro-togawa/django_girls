@@ -1,20 +1,19 @@
-<html>
-    <head>
-        <title>Django Girls blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
-        <!--リストオブジェクトの表示:%for%endforに囲まれた部分は繰り返す-->
-        {% for post in posts %}
-        <div>
-            <p>published: {{ post.published_date }}</p>
-            <h2><a href="">{{ post.title }}</a></h2>
+<!--コメントに括弧とかつけるとエラーはいたりする-->
+<!--テンプレートの拡張、blockを使った埋め込み-->
+{% extends 'blog/base.html' %}
+
+<!--base.htmlの対応する箇所に埋め込み% block content %→% endblock %-->
+{% block content %}
+    <!--リストオブジェクトの表示:%for%endforに囲まれた部分は繰り返す-->
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                <p>published: {{ post.published_date }}</p>
+            </div>
+            <!--%%はdjangoのテンプレートのタグの役割、pk=プライマリーキー-->
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
             <!--|linebreaksbr→改行を段落に変更してくれる-->
             <p>{{ post.text|linebreaksbr }}</p>
         </div>
-        {% endfor %}
-
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}
